@@ -1,0 +1,4 @@
+SEQUENTIAL
+# user, domain, authentication, x-deviceid, alias
+400;172.31.22.115;[authentication username=400 password=ttest1234];400-ksjdu2-400-hsihf;bob
+401;172.31.22.115;[authentication username=401 password=test1234];401-ksjdu2-401-fhish;alice
