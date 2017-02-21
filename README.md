@@ -165,4 +165,56 @@ start the kamailio server
 36. check for logs in: 
 
     /var/log/kamailio.log
-    
+
+
+# SIPp installation
+
+install dependencies
+
+1. apt-get install libncurses5-dev
+
+2. apt-get install g++
+
+main installation
+
+3. cd /usr/local/src
+
+4. wget https://downloads.sourceforge.net/project/sipp/sipp/3.4/sipp-3.3.990.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsipp%2Ffiles%2Fsipp%2F3.4%2F&ts=1487681143&use_mirror=excellmedia
+
+5. mv sipp-3.3.990.tar.gz\?r\=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsipp%2Ffiles%2Fsipp%2F3.4%2F sipp-3.3.990.tar.gz
+
+6. tar -xzf sipp-3.3.990.tar.gz
+
+7. cd sipp-3.3.990
+
+8. ./configure
+
+9. make
+
+Test Registration using SIPp
+
+Add users in kamailio:
+
+1. kamctl add 400@172.31.22.115 ttest1234
+
+2. kamctl add 401@172.31.22.115 test1234
+
+# Send REGISTER request to kamailio using SIPp script
+
+1. create Scenario file: 
+   
+   Committed as register.xml
+   
+2. create injection file:
+  
+   Committed as register.csv
+ 
+command to send register request:
+
+1. cd /usr/local/src/sipp-3.3.990
+
+2. ./sipp -sf tests_saurabh/register.xml -inf tests_saurabh/register.csv -i 172.31.22.115 172.31.22.115:5060 -m 2 -trace_msg
+
+3. output can be seen in tests_saurabh folder. (latest file ex: register_<pid>_messages.log)
+
+
