@@ -215,6 +215,20 @@ command to send register request:
 
 2. ./sipp -sf tests_saurabh/register.xml -inf tests_saurabh/register.csv -i 172.31.22.115 172.31.22.115:5060 -m 2 -trace_msg
 
-3. output can be seen in tests_saurabh folder. (latest file ex: register_<pid>_messages.log)
+3. output can be seen in tests_saurabh folder. (latest file ex: register_pid_messages.log)
 
 
+# Store the Value of X-DeviceID to location_attrs table
+
+changes done in kamailio script are: 
+
+1. modparam("usrloc", "xavp_contact", "ulattrs")      
+
+   modparam("usrloc", "timer_interval", 30)           
+   
+2. In route[REGISTRAR] {
+
+   $xavp(ulattrs=>device_id)=$hdr(X-DeviceID);
+   
+   
+   
