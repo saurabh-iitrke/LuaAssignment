@@ -16,6 +16,14 @@ install pre-required packages:
 
 8. apt-get install libpq-dev
 
+* apt-get install libcurl4-openssl-dev
+
+* apt-get install libssl-dev
+
+* apt-get install libxml2-dev
+
+* apt-get install libpcre3-dev
+
 download kamailio in installation directory
 
 9. mkdir -p /usr/local/src/kamailio-4.4
