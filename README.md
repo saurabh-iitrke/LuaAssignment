@@ -16,13 +16,13 @@ install pre-required packages:
 
 8. apt-get install libpq-dev
 
-* apt-get install libcurl4-openssl-dev
+8(a). apt-get install libcurl4-openssl-dev
 
-* apt-get install libssl-dev
+8(b). apt-get install libssl-dev
 
-* apt-get install libxml2-dev
+8(c). apt-get install libxml2-dev
 
-* apt-get install libpcre3-dev
+8(d). apt-get install libpcre3-dev
 
 download kamailio in installation directory
 
