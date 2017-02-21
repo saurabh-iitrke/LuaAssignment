@@ -1,0 +1,124 @@
+----------------------------------------------- 2017-02-21 18:51:07.096282
+UDP message sent (374 bytes):
+
+REGISTER sip:172.31.22.115 SIP/2.0^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-1-0^M
+Max-Forwards: 70^M
+From: "bob" <sip:400@172.31.22.115>;tag=1^M
+To: "bob" <sip:400@172.31.22.115>^M
+Call-ID: reg///1-1153@172.31.22.115^M
+CSeq: 7 REGISTER^M
+Contact: <sip:400@172.31.22.115:5061>^M
+Expires: 3600^M
+X-DeviceID:400-ksjdu2-400-hsihf^M
+Content-Length: 0^M
+User-Agent: SIPp^M
+^M
+
+----------------------------------------------- 2017-02-21 18:51:07.100263
+UDP message received [414] bytes :
+
+SIP/2.0 401 Unauthorized^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-1-0^M
+From: "bob" <sip:400@172.31.22.115>;tag=1^M
+To: "bob" <sip:400@172.31.22.115>;tag=217e2feef6f51c9c3c7d65c4dd2fbaa9.9f99^M
+Call-ID: reg///1-1153@172.31.22.115^M
+CSeq: 7 REGISTER^M
+WWW-Authenticate: Digest realm="172.31.22.115", nonce="WKyNR1isjBv9OKK6uDfkqIGXqZpo/tU6"^M
+Server: kamailio (4.4.5 (x86_64/linux))^M
+Content-Length: 0^M
+^M
+
+----------------------------------------------- 2017-02-21 18:51:07.100391
+UDP message sent (562 bytes):
+
+REGISTER sip:172.31.22.115 SIP/2.0^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-1-3^M
+Max-Forwards: 70^M
+From: "bob" <sip:400@172.31.22.115>;tag=1^M
+To: "bob" <sip:400@172.31.22.115>^M
+Call-ID: reg///1-1153@172.31.22.115^M
+CSeq: 8 REGISTER^M
+Contact: <sip:400@172.31.22.115:5061>^M
+Expires: 3600^M
+X-DeviceID:400-ksjdu2-400-hsihf^M
+Content-Length: 0^M
+User-Agent: SIPp^M
+Authorization: Digest username="400",realm="172.31.22.115",uri="sip:172.31.22.115:5060",nonce="WKyNR1isjBv9OKK6uDfkqIGXqZpo/tU6",response="da610018058605a76c78a37772124d96",algorithm=MD5^M
+^M
+
+----------------------------------------------- 2017-02-21 18:51:07.124363
+UDP message received [366] bytes :
+
+SIP/2.0 200 OK^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-1-3^M
+From: "bob" <sip:400@172.31.22.115>;tag=1^M
+To: "bob" <sip:400@172.31.22.115>;tag=217e2feef6f51c9c3c7d65c4dd2fbaa9.26ba^M
+Call-ID: reg///1-1153@172.31.22.115^M
+CSeq: 8 REGISTER^M
+Contact: <sip:400@172.31.22.115:5061>;expires=3600^M
+Server: kamailio (4.4.5 (x86_64/linux))^M
+Content-Length: 0^M
+^M
+
+----------------------------------------------- 2017-02-21 18:51:07.193375
+UDP message sent (378 bytes):
+
+REGISTER sip:172.31.22.115 SIP/2.0^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-2-0^M
+Max-Forwards: 70^M
+From: "alice" <sip:401@172.31.22.115>;tag=2^M
+To: "alice" <sip:401@172.31.22.115>^M
+Call-ID: reg///2-1153@172.31.22.115^M
+CSeq: 7 REGISTER^M
+Contact: <sip:401@172.31.22.115:5061>^M
+Expires: 3600^M
+X-DeviceID:401-ksjdu2-401-fhish^M
+Content-Length: 0^M
+User-Agent: SIPp^M
+
+
+----------------------------------------------- 2017-02-21 18:51:07.202318
+UDP message received [418] bytes :
+
+SIP/2.0 401 Unauthorized^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-2-0^M
+From: "alice" <sip:401@172.31.22.115>;tag=2^M
+To: "alice" <sip:401@172.31.22.115>;tag=217e2feef6f51c9c3c7d65c4dd2fbaa9.d967^M
+Call-ID: reg///2-1153@172.31.22.115^M
+CSeq: 7 REGISTER^M
+WWW-Authenticate: Digest realm="172.31.22.115", nonce="WKyNR1isjBv9OKK6uDfkqIGXqZpo/tU6"^M
+Server: kamailio (4.4.5 (x86_64/linux))^M
+Content-Length: 0^M
+^M
+
+----------------------------------------------- 2017-02-21 18:51:07.202399
+UDP message sent (566 bytes):
+
+REGISTER sip:172.31.22.115 SIP/2.0^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-2-3^M
+Max-Forwards: 70^M
+From: "alice" <sip:401@172.31.22.115>;tag=2^M
+To: "alice" <sip:401@172.31.22.115>^M
+Call-ID: reg///2-1153@172.31.22.115^M
+CSeq: 8 REGISTER^M
+Contact: <sip:401@172.31.22.115:5061>^M
+Expires: 3600^M
+X-DeviceID:401-ksjdu2-401-fhish^M
+Content-Length: 0^M
+User-Agent: SIPp^M
+Authorization: Digest username="401",realm="172.31.22.115",uri="sip:172.31.22.115:5060",nonce="WKyNR1isjBv9OKK6uDfkqIGXqZpo/tU6",response="85359f2f9c7d8a52625f996b64b22b5b",algorithm=MD5^M
+^M
+
+----------------------------------------------- 2017-02-21 18:51:07.225738
+UDP message received [370] bytes :
+
+SIP/2.0 200 OK^M
+Via: SIP/2.0/UDP 172.31.22.115:5061;branch=z9hG4bK-1153-2-3^M
+From: "alice" <sip:401@172.31.22.115>;tag=2^M
+To: "alice" <sip:401@172.31.22.115>;tag=217e2feef6f51c9c3c7d65c4dd2fbaa9.6044^M
+Call-ID: reg///2-1153@172.31.22.115^M
+CSeq: 8 REGISTER^M
+Contact: <sip:401@172.31.22.115:5061>;expires=3600^M
+Server: kamailio (4.4.5 (x86_64/linux))^M
+Content-Length: 0^M
