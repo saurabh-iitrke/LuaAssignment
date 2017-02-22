@@ -286,6 +286,8 @@ To test:
    
 4. packets can be checked in /usr/local/src/sipp-3.3.990/tests_saurabh folder for UAC (ex: invite_pid_messages.log)
 
+   ex: see committed file: invite_uac_packet_capture.log
+
 5. packets can be checked in /usr/local/src/sipp-3.3.990 folder for UAS (ex: uas_pid_messages.log)
 
-
+   ex: see committed file: reply_uas_packet_capture.log
