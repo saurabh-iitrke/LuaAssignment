@@ -296,43 +296,28 @@ To test:
    
 # Add X-DeviceID header value to INVITE
 
-could not do without sqlops modules. tried using db2_ops modules but failed.
+kamailio script changes: 
 
-script changes using sqlops module:
+modparam("avpops","db_url","postgres://kamailio:kamailiorw@localhost:5432/kamailio")
 
-1. modparam("sqlops","sqlcon","cb=>postgres://kamailio:kamailiorw@localhost:5432/kamailio")
+modparam("avpops","avp_table","location_attrs")
 
-2. if (sql_xquery("cb", "select * from location_attrs", "ra") == 1)
+modparam("avpops","uuid_column","id")
 
-                {
-		
-                    $var(i) = 0;
-		    
-                    while($xavp(ra[$var(i)]) != $null){
-		    
-                        xlog("L_INFO"," @@@@@@@@@@@@@@@@@@@@ $rU [id, domain] = [$xavp(ra[$var(i)]=>username), $xavp(ra[$var(i)]=>avalue)]\n");
-			
-                        if($xavp(ra[$var(i)]=>username) == $rU){
-			
-                                append_hf("X-DeviceID: $xavp(ra[$var(i)]=>avalue)\r\n");                                   #CUSTOMIZED
-                        }
-			
-                        $var(i) = $var(i) + 1;
-			
-                    }
-		    
-                }
+modparam("avpops","username_column","username")
+
+modparam("avpops","domain_column","domain")
+
+modparam("avpops","attribute_column","aname")
+
+modparam("avpops","value_column","avalue")
+
+modparam("avpops","db_scheme","scheme1:table=location_attrs;uuid_col=id;username_col=username;domain_col=domain;value_col=avalue")
 
 
-Attempt using db2_ops module:
+avp_db_load("$fu","$avp(foo)/$scheme1");
 
-modparam("db2_ops", "db_url", "postgres://kamailio:kamailiorw@localhost:5432/kamailio");
+xlog("L_INFO","@@@@@@@@@@@@@@@@@@@ X-DeviceID value: $avp(foo)");       
 
-modparam("db2_ops", "declare_query", "sel1=select/location_attrs/avalue/username/400");
-
-modparam("db2_ops", "declare_handle", "my_handle");
-
-db_query("sel1", "my_handle");
-
-$var(bar) = @db.fetch.my_handle;
+append_hf("X-DeviceID: $avp(foo)\r\n");
    
