@@ -1,3 +1,5 @@
+Note: kamailio.cfg is committed and all changes are marked with 'CUSTOMIZED' within the script.
+
 # Kamailio 4.4 Installation steps
 1. apt-get update
 2. apt-get install vim
@@ -291,3 +293,46 @@ To test:
 5. packets can be checked in /usr/local/src/sipp-3.3.990 folder for UAS (ex: uas_pid_messages.log)
 
    ex: see committed file: reply_uas_packet_capture.log
+   
+# Add X-DeviceID header value to INVITE
+
+could not do without sqlops modules. tried using db2_ops modules but failed.
+
+script changes using sqlops module:
+
+1. modparam("sqlops","sqlcon","cb=>postgres://kamailio:kamailiorw@localhost:5432/kamailio")
+
+2. if (sql_xquery("cb", "select * from location_attrs", "ra") == 1)
+
+                {
+		
+                    $var(i) = 0;
+		    
+                    while($xavp(ra[$var(i)]) != $null){
+		    
+                        xlog("L_INFO"," @@@@@@@@@@@@@@@@@@@@ $rU [id, domain] = [$xavp(ra[$var(i)]=>username), $xavp(ra[$var(i)]=>avalue)]\n");
+			
+                        if($xavp(ra[$var(i)]=>username) == $rU){
+			
+                                append_hf("X-DeviceID: $xavp(ra[$var(i)]=>avalue)\r\n");                                   #CUSTOMIZED
+                        }
+			
+                        $var(i) = $var(i) + 1;
+			
+                    }
+		    
+                }
+
+
+Attempt using db2_ops module:
+
+modparam("db2_ops", "db_url", "postgres://kamailio:kamailiorw@localhost:5432/kamailio");
+
+modparam("db2_ops", "declare_query", "sel1=select/location_attrs/avalue/username/400");
+
+modparam("db2_ops", "declare_handle", "my_handle");
+
+db_query("sel1", "my_handle");
+
+$var(bar) = @db.fetch.my_handle;
+   
