@@ -238,5 +238,54 @@ changes done in kamailio script are:
 
    $xavp(ulattrs=>device_id)=$hdr(X-DeviceID);
    
+# NodeJS server to handle GET request
+
+1. file server.js committed.
+
+2. Added into crontab in server. 
+  
+   */1 * * * * /usr/bin/nodejs /usr/local/src/nodeserver/server.js
    
+# kamailio script changes to Add RouteHeader in incoming INVITE as X-Route header
+
+1. modparam("utils", "http_query_timeout", 2)    
+
+2. if (is_method("INVITE|SUBSCRIBE")) {
+      http_query("http://localhost:3001","$var(result)");
+      jansson_get_field($var(result), "RouteHeader", "$var(foo)");
+      xlog("L_INFO","@@@@@@@@@@@@@@@@@@@  RouteHeader is $var(foo)");
+      append_hf("X-Route: $var(foo)\r\n");
    
+# Create incoming call scenario
+
+user 400(bob) will call to user 401(alice)
+
+1. Scenario file committed: invite.xml
+
+2. injection file committed: invite.csv
+
+To test: 
+
+1. Register them first
+  
+   a. cd /usr/local/src/sipp-3.3.990
+
+   b. ./sipp -sf tests_saurabh/register.xml -inf tests_saurabh/register.csv -i 172.31.22.115 172.31.22.115:5060 -m 2 -trace_msg
+
+2. Open a console (UAC i.e. bob): 
+
+    a. cd /usr/local/src/sipp-3.3.990
+
+    b. ./sipp -sf tests_saurabh/invite.xml -inf tests_saurabh/invite.csv -i 172.31.22.115 172.31.22.115:5060 -m 1 -trace_msg
+
+3. Opens Second console (UAS i.e. alice)
+
+   a. cd /usr/local/src/sipp-3.3.990
+   
+   b. ./sipp -sn uas 172.31.22.115:5060 -i 172.31.22.115 -trace_msg
+   
+4. packets can be checked in /usr/local/src/sipp-3.3.990/tests_saurabh folder for UAC (ex: invite_pid_messages.log)
+
+5. packets can be checked in /usr/local/src/sipp-3.3.990 folder for UAS (ex: uas_pid_messages.log)
+
+
