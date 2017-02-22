@@ -1,0 +1,94 @@
+----------------------------------------------- 2017-02-22 06:49:47.330980
+UDP message received [537] bytes :
+
+INVITE sip:401@172.31.22.115:5061 SIP/2.0^M
+Record-Route: <sip:172.31.22.115;lr>^M
+Via: SIP/2.0/UDP 172.31.22.115;branch=z9hG4bK781d.78af94fb0b49f48b735a7f62fb75230f.0^M
+Via: SIP/2.0/UDP 172.31.22.115:5062;branch=z9hG4bK-21333-1-0^M
+From: "bob" <sip:400@172.31.22.115:5062>;tag=21333SIPpTag001^M
+To: "alice" <sip:401@172.31.22.115:5060>^M
+Call-ID: 1-21333@172.31.22.115^M
+CSeq: 1 INVITE^M
+Contact: sip:400@172.31.22.115:5062^M
+Max-Forwards: 69^M
+Subject: Performance Test^M
+Content-Type: application/sdp^M
+Content-Length: 0^M
+X-Route: 123.321.213^M
+^M
+
+----------------------------------------------- 2017-02-22 06:49:47.331090
+UDP message sent (406 bytes):
+
+SIP/2.0 180 Ringing^M
+Via: SIP/2.0/UDP 172.31.22.115;branch=z9hG4bK781d.78af94fb0b49f48b735a7f62fb75230f.0, SIP/2.0/UDP 172.31.22.115:5062;branch=z9hG4bK-21333-1-0^M
+From: "bob" <sip:400@172.31.22.115:5062>;tag=21333SIPpTag001^M
+To: "alice" <sip:401@172.31.22.115:5060>;tag=21332SIPpTag011^M
+Call-ID: 1-21333@172.31.22.115^M
+CSeq: 1 INVITE^M
+Contact: <sip:172.31.22.115:5061;transport=UDP>^M
+Content-Length: 0^M
+^M
+
+----------------------------------------------- 2017-02-22 06:49:47.331127
+UDP message sent (573 bytes):
+SIP/2.0 200 OK^M
+Via: SIP/2.0/UDP 172.31.22.115;branch=z9hG4bK781d.78af94fb0b49f48b735a7f62fb75230f.0, SIP/2.0/UDP 172.31.22.115:5062;branch=z9hG4bK-21333-1-0^M
+From: "bob" <sip:400@172.31.22.115:5062>;tag=21333SIPpTag001^M
+To: "alice" <sip:401@172.31.22.115:5060>;tag=21332SIPpTag011^M
+Call-ID: 1-21333@172.31.22.115^M
+CSeq: 1 INVITE^M
+Contact: <sip:172.31.22.115:5061;transport=UDP>^M
+Content-Type: application/sdp^M
+Content-Length:   137^M
+^M
+v=0^M
+o=user1 53655765 2353687637 IN IP4 172.31.22.115^M
+s=-^M
+c=IN IP4 172.31.22.115^M
+t=0 0^M
+m=audio 6000 RTP/AVP 0^M
+a=rtpmap:0 PCMU/8000^M
+
+----------------------------------------------- 2017-02-22 06:49:47.835314
+UDP message sent (573 bytes):
+
+SIP/2.0 200 OK^M
+Via: SIP/2.0/UDP 172.31.22.115;branch=z9hG4bK781d.78af94fb0b49f48b735a7f62fb75230f.0, SIP/2.0/UDP 172.31.22.115:5062;branch=z9hG4bK-21333-1-0^M
+From: "bob" <sip:400@172.31.22.115:5062>;tag=21333SIPpTag001^M
+To: "alice" <sip:401@172.31.22.115:5060>;tag=21332SIPpTag011^M
+Call-ID: 1-21333@172.31.22.115^M
+CSeq: 1 INVITE^M
+Contact: <sip:172.31.22.115:5061;transport=UDP>^M
+Content-Type: application/sdp^M
+Content-Length:   137^M
+^M
+v=0^M
+o=user1 53655765 2353687637 IN IP4 172.31.22.115^M
+s=-^M
+c=IN IP4 172.31.22.115^M
+t=0 0^M
+m=audio 6000 RTP/AVP 0^M
+a=rtpmap:0 PCMU/8000^M
+
+
+----------------------------------------------- 2017-02-22 06:49:48.836738
+UDP message sent (573 bytes):
+
+SIP/2.0 200 OK^M
+Via: SIP/2.0/UDP 172.31.22.115;branch=z9hG4bK781d.78af94fb0b49f48b735a7f62fb75230f.0, SIP/2.0/UDP 172.31.22.115:5062;branch=z9hG4bK-21333-1-0^M
+From: "bob" <sip:400@172.31.22.115:5062>;tag=21333SIPpTag001^M
+To: "alice" <sip:401@172.31.22.115:5060>;tag=21332SIPpTag011^M
+Call-ID: 1-21333@172.31.22.115^M
+CSeq: 1 INVITE^M
+Contact: <sip:172.31.22.115:5061;transport=UDP>^M
+Content-Type: application/sdp^M
+Content-Length:   137^M
+^M
+v=0^M
+o=user1 53655765 2353687637 IN IP4 172.31.22.115^M
+s=-^M
+c=IN IP4 172.31.22.115^M
+t=0 0^M
+m=audio 6000 RTP/AVP 0^M
+a=rtpmap:0 PCMU/8000^M
